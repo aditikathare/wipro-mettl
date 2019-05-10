@@ -1,0 +1,1661 @@
+//Prime digits....
+string h="";
+for(int i=0;i<a.Length;i++)
+{
+if(a[i]=='2' || a[i]=='3' || a[i]=='5' || a[i]=='7')
+{
+g+=Convert.ToString(a[i]);
+}
+else
+{
+q++;
+continue;
+}
+}
+for(int i=0;i<g.Length;i++)
+{
+c+=Convert.Toint32(g[i]-'0')
+}
+h=Convert.ToString(c);
+if(q==a.Length)
+{
+g=Convert.ToString(a[0]);
+h=Convert.ToString(a.Last());g=g+ ":" +h;
+return g;
+}
+else
+{
+g=g+":"+h;
+return g;
+}
+}
+}
+.......................................
+
+	 //Longest Sequence
+            int sum = 0, count = 0, count1 = 0, max = 0, tem = 0;
+            int n;
+            n = Convert.ToInt32(Console.ReadLine());
+            int[] a = new int[n];
+            for (int i = 0; i < n; i++)
+            { a[i] = Convert.ToInt32(Console.ReadLine());   }
+            for (int i = 0; i < n; i++)
+            { if (a[i] % 2 != 0)
+                {    count++;
+                    if (count == 1)
+                    {  count1++; }   }
+              else
+                { count = 0;  }
+                if (count > max)
+                {  max = count; }
+            }            for (int i = 0; i < n; i++) {
+                if (a[i] % 2 != 0)
+                {     tem += a[i];
+                    count++;
+                    if (count == max)
+                    {  sum += tem;  }     }
+                else {   count = 0;
+                    tem = 0;    }        }
+            Console.WriteLine("no of sequence" + count1);  Console.WriteLine("length of largest sequence" + max);
+            Console.WriteLine("sum is" + sum);
+.......................................
+	//decreasing squnce
+		 int c=0,c1=0,max=0;
+		for(int i=0;i<input2-1;i++)
+		{if(input1[i]>input1[i+1]){c++;  }
+	else	{if(c!=0){	c1++;if(c+1>max)
+			{max = c+1;}	c=0;	}}
+		if(c!=0 && i==input2-2)
+			{    c1++;
+				if(c+1>max)
+				{max = c+1;}
+				c=0;	} }
+		Result r = new Result();
+		r.output1 = c1;
+		r.output2 = max;
+        return r; 
+................................................
+//today is a nice day
+string arr = Console.ReadLine();
+            Console.WriteLine("Enter two numbers");
+            int a = Convert.ToInt32(Console.ReadLine());
+            int b = Convert.ToInt32(Console.ReadLine());
+
+            string[] str = arr.Split(); string s1 = str[a - 1];
+            string s2 = str[b - 1];string res = "";
+            string rest = ""; string rslt = "";
+                  if (s1.Length % 2 != 0)
+                { for (int i = 0; i <= s1.Length / 2; i++)
+                    { res += s1[s1.Length / 2 - i]; }    }
+              else{   for (int i = 1; i <= s1.Length / 2; i++)
+                { res += s1[s1.Length / 2 - i]; }  } 
+            rest += s2.Substring((s2.Length) / 2, s2.Length - (s2.Length) / 2);
+            if (s2.Length % 2 != 0)
+            {  for (int j = 0; j <= s2.Length/2; j++)
+                { rest += s2[s2.Length / 2 - j]; }      }
+            else
+            {  for (int j = 1; j <= s2.Length / 2; j++)
+                { rest += s2[s2.Length / 2 - j]; }   }
+             rslt = res + " "+rest + "";
+            Console.WriteLine(rslt);
+........................................            
+	//rsf
+	    int num; num = int.Parse(Console.ReadLine());
+            int temp = 0; int l1 = (num.ToString().Length);
+            if (l1 > 2)
+            { while (num > 99)
+                {   int n = 0;
+                    int l = (num.ToString().Length);
+                    int[] ar = new int[l];
+                    for (int i = 0; i < l; i++)
+                    { ar[i] = num % 10;
+                        num = num / 10;  }
+                    Array.Reverse(ar);
+                    for (int i = 0; i < l / 2; i++)
+                    {  temp = Math.Abs(ar[i] - ar[l - 1 - i]);
+                        n = n * 10 + temp;
+                       // n = n  + temp;     }
+                    if (l % 2 != 0)
+                    {  n = n *10+ar[l / 2];
+                      //  n = n+ ar[l / 2];     }
+                    num = n;  }
+                Console.WriteLine("rsf={0}", num);  }
+            else if (l1 == 2)
+            { Console.WriteLine("rsf={0}", num); }
+            else  {Console.WriteLine("rsf={0}", 0);}
+...................................................           
+             //sumofpowerofdigits
+             string s = input1.ToString();int sum=0;int c=0;
+          for(int i=0;i<s.Length-1;i++)
+          {sum += Convert.ToInt32(Math.Pow(s[i]-'0',s[i+1]-'0'));}
+	sum += Convert.ToInt32(Math.Pow(s[s.Length-1]-'0',s.Length));
+		return sum;
+        //6+5-4+3-2+1
+		  int s=0;
+		if(input2==1)
+		{	if(input1%2==0)
+			s+=input1/2;
+				else
+			s+=(input1/2)+1;	}
+		else{		if(input1%2==0)
+				s += input1+(input1/2);
+				  else
+				s+= input1+(input1-1)/2;}	
+				return s;
+
+...................................................
+//io:138 or if no prime then n:n if given string is noon
+            string s = Console.ReadLine(); int si = 0;
+            string ss = ""; int c = 0; string prime = "";
+              for (int i = 0; i < s.Length; i++)
+            {  char str = s[i];   c = 0;
+                int ascii = Convert.ToInt32(str);
+                for (int j = 2; j < ascii; j++)
+                {   if (ascii % j == 0)
+                    {   c++;   break; } }
+                if (c == 0)
+                {   ss += s[i];
+                    si += ascii;
+                    prime = ss + "" + ":" + si + "";}              
+                else {  if (c > 0)
+                    { prime = s[0] + ":" + s[s.Length - 1];                       
+                    }  }  }
+            Console.WriteLine(prime);
+            Console.ReadKey();
+.............................................................
+  //T10S if String length>10
+            string str = Console.ReadLine();
+            int c = 0; string res = "";
+            for (int i = 1; i < str.Length; i++)
+            { c++; }
+            if (str.Length > 10)
+            {   res += str[0] + "";
+                res += (c - 1) + "";
+                res += str[str.Length - 1] + "";
+                Console.WriteLine(res);     }
+            else
+            {   res = str;
+                Console.WriteLine(res);  }
+..........................................            
+         //array operation
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] input = new int[n];
+            for (int i = 0; i < n; i++)
+            { input[i] = Convert.ToInt32(Console.ReadLine());}
+             Array.Sort(input);
+            int min = input[0];
+            for (int j = 0; j < input.Length; j++)
+            { input[j] = input[j] - min; }
+            int max = input.Max();
+            for (int j = 0; j < input.Length; j++)
+            {input[j] = input[j] * max; }
+            for(int i=0;i<input.Length;i++)
+            Console.WriteLine(input[i]);
+....................................................
+  //if i is 0 then print vowel from string else print consonants 
+            string input = Console.ReadLine();
+            int i1 = Convert.ToInt32(Console.ReadLine());
+            string str = "";
+            if (i1 == 0)
+            {  for (int i = 0; i < input.Length; i++)
+             { if (input[i] == 'a' || input[i] == 'e' || input[i] == 'i' || input[i] == 'o' || input[i] == 'u')
+                    { str += input[i];  }   }  }
+         else  { for (int i = 0; i < input.Length; i++)
+            {   if (input[i] != 'a' && input[i] != 'e' && input[i] != 'i' && input[i] != 'o' && input[i] != 'u')
+                    {  str += input[i];} }      
+            Console.WriteLine(str);
+...................................................
+          //sum of prime no.s in an array
+            string s = Console.ReadLine();
+            int sum = 0;
+            int input = Convert.ToInt32(s);
+            for(int i=0;i<s.Length;i++)
+            {if(s[i]=='2'|| s[i] == '3' || s[i] == '5' || s[i] == '7' )
+                { sum += s[i] - '0';  } }
+            Console.WriteLine(sum);
+-----------------------------------------------------------------------------------
+
+//-------METTAL LOGICALS
+//-------M2
+
+ADDITION OF STRINGS (BIG INT)
+-----------------------------
+using System;
+using System.Collections.Generic;
+
+//Read only region start
+public class UserMainCode
+{
+    public string addNumberStrings(string input1,string input2)
+    {
+        //Read only region end
+        //Write code here
+        
+		char[] num1=input1.ToCharArray();
+		char[] num2=input2.ToCharArray();
+		string OUTPUT="";
+		int carry=0,sum = 0;
+		int i,j;
+		int count=0;
+		i=num1.Length-1;
+		j=num2.Length-1;
+		while(i>=0 || j>=0)
+			{
+			if(i>=0 && j>=0){//if any of the number is smaller than other number than it will get added to the ouput string automatically
+               sum = (int)Char.GetNumericValue(num1[i])+(int)Char.GetNumericValue(num2[j])+carry;
+				if(sum>9){
+					carry = sum/10;
+					sum = sum%10;					
+				}
+				else
+					carry = 0;
+				//OUTPUT += sum.ToString();
+				i--;
+				j--;
+			}
+			else{
+				if(i>=0){
+					sum = (int)Char.GetNumericValue(num1[i])+carry;
+					if(sum>9){
+					carry = 1;
+					sum = sum%10;					
+				}
+				else
+					carry = 0;
+					i--;
+				}
+				else if(j>=0){
+					sum = (int)Char.GetNumericValue(num2[j])+carry;
+					if(sum>9){
+					carry = 1;
+					sum = sum%10;					
+				}
+				else
+					carry = 0;
+					j--;
+				}
+				else
+					break;
+				if(sum>9){
+					carry = 1;
+					sum = sum%10;					
+				}
+				else
+					carry = 0;
+			}
+				OUTPUT += sum.ToString();
+			
+		}
+		if(carry>0)
+			OUTPUT += carry.ToString();
+		char[] charArray = OUTPUT.ToCharArray();
+    Array.Reverse( charArray );
+
+		return new String(charArray);
+    }
+}
+
+FIND POSSIBLE WORDS
+--------------------
+
+/*
+ * Identify Possible Words
+ * ======== ======== =====
+ * 
+ * @author Hardeep Singh
+ * @since 29-12-2018
+ */
+using System;
+using System.Collections.Generic;
+
+//Read only region start
+public class UserMainCode
+{
+    public string identifyPossibleWords(string input1,string input2)
+    {
+        //Read only region end
+        //Write code here
+        //---break input2 in seperate suspect words
+		bool matchFound = false;
+		String output = "";
+		String[] suspects = input2.ToUpper().Split(':');
+		//---break input1 in 2 parts : before '_' and after '_'
+		String[] victims = input1.ToUpper().Split('_');
+		//---iterate on each suspect word in suspects 
+		foreach(String suspect in suspects){
+			if(suspect.Length == input1.Length && suspect.StartsWith(victims[0]) && suspect.EndsWith(victims[1])){
+				//----the next if will put : before every word after first word
+				if(matchFound)
+				//----it is equivalent to if(matchFound==true)
+				{ 
+					output += ":";
+				}
+				matchFound = true;
+				output += suspect.ToUpper();
+			}
+		}
+		if(!matchFound)
+			output = "ERROR-009";
+		return output;
+	}
+}
+
+CYCLIC ORDER
+-------------
+
+using System;
+using System.Collections.Generic;
+
+//Read only region start
+public class UserMainCode
+{
+    public int sumOfSumsOfDigits(int input1)
+    {
+        //Read only region end
+        //Write code here
+     int n=input1,i=0, result = 0,sum=0;
+		for( ; input1>0 ;)
+		{
+			int digit = input1%10;
+			sum = sum + digit;			
+			result=result+sum;
+			input1 = input1/10;
+		}
+		return result;   
+    }
+}
+
+DECREASING SEQUNCE METTAL
+-------------------------
+using System;
+using System.Collections.Generic;
+
+//Read only region start
+public class UserMainCode
+{
+    //Assume following return types while writing the code for this question. 
+    public class Result
+    {
+		public int output1;
+		public int output2;
+    }
+
+    public Result decreasingSeq(int[] input1,int input2)
+    {
+        //Read only region end
+        //Write code here
+		int[] arr = input1;
+        int noSeq=0, maxLen=0, tempLen=1;
+		bool seqFound = false;
+		for(int i=0;i<input2-1;i++){
+			if(arr[i]>arr[i+1]){
+				if(seqFound==false)
+					noSeq++;
+				seqFound = true;				
+				tempLen++;
+				if(maxLen<tempLen)
+						maxLen = tempLen;
+			}
+			else{
+				if(seqFound==true){					
+					seqFound=false	;				
+				}
+			if(seqFound==false)
+				tempLen = 1;
+			}
+		}
+		
+		Result r = new Result();
+		r.output1 = noSeq;
+		r.output2 = maxLen;
+		
+		return r;
+    }
+}
+
+
+//1. common and uncommon:
+-------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace _1_new
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int j = 0;
+            Console.WriteLine("Enter the first string");
+            string s1 = Console.ReadLine();
+            char[] arr_1 = s1.ToCharArray();
+            Console.WriteLine("Enter the second string");
+            string s2 = Console.ReadLine();
+            char[] arr_2 = s2.ToCharArray();
+            string str1 = "";
+            string str2 = "";
+            //first case
+            for (int i = 0; i < arr_1.Length; i++)
+            {
+                bool b1 = arr_2.Contains(arr_1[i]);
+                if (b1 == true)
+                {
+                    str1 = (str1 + arr_1[i].ToString());
+                }
+            }
+            //Console.WriteLine("first String : " +str1);   //first compare with 2nd
+
+            for (int i = 0; i < arr_2.Length; i++)
+            {
+                bool b1 = arr_1.Contains(arr_2[i]);
+                if (b1 == true)
+                {
+                    str2 = (str2 + arr_2[i].ToString());
+                }
+            }
+
+            //Console.WriteLine("Second string :" + str2);   //2nd compare with first
+
+            Console.WriteLine(str1+str2);
+  
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------
+//2. vowels and consonats:
+--------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace _1_new
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int j = 0;
+            Console.WriteLine("Enter the first string");
+            string s1 = Console.ReadLine();
+            char[] arr_1 = s1.ToCharArray();
+
+            Console.WriteLine("Enter:\n1. for vowels\n2. for consonants");
+            int num = Convert.ToInt32(Console.ReadLine());
+          
+            string str1 = "";
+            string str2 = "";
+            //first case
+            for (int i = 0; i < arr_1.Length; i++)
+            {
+                if (num == 1)
+                {
+                    
+                    if (arr_1[i] == 'a' || arr_1[i] == 'e' || arr_1[i] == 'i' || arr_1[i] == 'o' || arr_1[i] == 'u')
+                    {
+                        str1 = (str1 + arr_1[i].ToString());
+                    }
+                }
+                else
+                {
+                    if (arr_1[i] != 'a' && arr_1[i] != 'e' && arr_1[i] != 'i' && arr_1[i] != 'o' && arr_1[i] != 'u')
+                    {
+                        str1 = (str1 + arr_1[i].ToString());
+                    }
+                }
+
+            }
+           
+
+            Console.WriteLine(str1);
+  
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------
+3. longest subsequence for positive or negative:
+-------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace _1_new
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int sum = 0, count = 0, max = 0, temp_sum = 0;
+            int[] s = { 1, 2, -8, -5, -9, -3, 7, 8, 4, -12, -6, 5, 8, 7, 8, -8, -1, -7, -1, 7, 8, -8, -1, -7, -1 };
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] < 0)                                //for -tive seq just reverse the condition #1
+                {
+                    count++;
+                }
+                else
+                {
+                    count = 0;
+                }
+                if (count > max)
+                {
+                    max = count;
+                }
+            }
+            for (int j = 0; j < s.Length; j++)
+            {
+                if (s[j] < 0)                                //#2
+                {
+                    temp_sum += s[j];
+                    count++;
+                    if (count == max)
+                    {
+                        sum += temp_sum;
+                    }
+                }
+                else
+                {
+                    temp_sum = 0;
+                    count = 0;
+                }
+            }
+            Console.WriteLine(sum);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------
+4. 
+//input1: Today is a Nice day
+-----------------------------
+input2: 41
+ouput: iNce doTday
+
+code:
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		String s = "Today is a Nice Day";
+		int num = 41;
+		int num2 = num%10;
+		num/=10;
+		int num1 = num%10;
+		string[] str = s.Split(' ');
+		string s1 = str[num1-1];
+		string s2 = str[num2-1];
+		string s_1 = "";
+		string s_2 = "";
+		if(s1.Length %2==0)
+		{
+			s_1 = s1.Substring(0,s1.Length/2);
+			char[] ch = s_1.ToCharArray();
+		    Array.Reverse(ch);
+			string _s = new String(ch);
+			s_1 = (_s+s1.Substring((s1.Length/2)));
+		}
+		else
+		{
+			s_1 = s1.Substring(0,s1.Length/2+1);
+			char[] ch = s_1.ToCharArray();
+		    Array.Reverse(ch);
+			string _s = new String(ch);
+			s_1 = (_s+s1.Substring((s1.Length/2)));
+		}
+		
+		if(s2.Length%2==1)
+		{
+			s_2 = s2.Substring(0,s2.Length/2+1);
+			char[] ch = s_2.ToCharArray();
+		    Array.Reverse(ch);
+			string _s = new String(ch);
+			s_2 = (_s+s2.Substring((s2.Length/2)));
+		}
+		else
+		{
+			s_2 = s2.Substring(0,s2.Length/2);
+			char[] ch = s_2.ToCharArray();
+		    Array.Reverse(ch);
+			string _s = new String(ch);
+			s_2 = (_s+s2.Substring((s2.Length/2)));
+		}
+		Console.WriteLine(s_1 +' '+ s_2);
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+5. Positive number of subsequence ,sum and all
+
+code:
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+		  int sum = 0, count = 0, max = 0, temp_sum = 0;
+		  int temp=1, num=0;
+            int[] s = { -1, 2, -8, -5, -9, -3, 7, 8, 4, -12, -6, 5, 8, 7, 8, -8, -1, -7, -1, 7, 8, -8, -1, -7, -1 };
+            for(int i =0;i<s.Length;i++)
+			{
+				if(s[i]>0)
+				{
+					count++;
+					if(temp==1)
+					{
+						num++;
+					}
+					temp++;
+				}
+				else
+				{
+					count=0;
+					temp=1;
+				}
+				if(count>max)
+				{
+					max=count;
+				}
+			}
+		int[] arr = new int[max];
+		int k=0;
+		int c=0;
+		    for(int j =0;j<s.Length;j++)
+			{
+				if(s[j]>0)
+				{
+					temp_sum+=s[j];
+					count++;
+					if(count==max)
+					{
+						//Console.WriteLine(j);
+						for(int i =j;s[i]>0;i--)
+						{
+				             arr[k]=s[i];
+							 k++;
+						}
+						sum+=temp_sum;
+					}
+				}
+				else
+				{
+					temp_sum=0;
+					count=0;
+				}
+			}
+		Array.Reverse(arr);
+		for(int i=0;i<arr.Length;i++)
+		{
+			Console.Write(arr[i]+" ");
+		}
+		Console.WriteLine("\n");
+		Console.WriteLine(max);
+		Console.WriteLine("\n");
+		Console.WriteLine(sum);
+		Console.WriteLine("\nNumber of possible sequence\n");
+	    Console.WriteLine(num);
+	}
+}
+
+output:
+5 8 7 8 
+
+4
+
+
+28
+
+Number of possible sequence
+
+4
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+// odd even positive 
+23456=peoeoe.
+--------------------
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n;
+           n=int.Parse( Console.ReadLine());
+            string str = "";
+            if(n>0)
+            {
+                str = "p";
+            }
+            else
+            {
+                str = "n";
+            }
+            int len = (n.ToString().Length);
+            int[] ar = new int[len];
+            for (int i = 0; i<len;i++)
+            {
+                ar[i] = n % 10;
+                n = n / 10;
+            }
+            Array.Reverse(ar);
+            for(int i=0;i<len;i++)
+            {
+                if(ar[i]%2==0)
+                {
+                    str += "e";
+                }
+                else
+                {
+                    str += "o";
+                }
+            }
+            Console.WriteLine(str);
+        }
+    }
+}
+
+
+
+DECREASING SEQUENCE mile 2
+---------- -------- ---- --
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int count1 = 1;
+            int finalsum = 0;
+            int count = 1;
+            int max = 0;
+            int temp = 0;
+            int[] arr = { 1, 2, 4, 3, 8, 6, 5, 3, 1, 9, 8, 7, 6, 5 };
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                if (arr[i] > arr[i + 1])
+                {
+                    count++;
+                }
+                else
+                {
+                    count = 1;
+                }
+                if (count > max)
+                {
+                    max = count;
+                }
+            }
+            Console.WriteLine(max);
+            int sum = 0;
+            int sum1 = 0;
+
+            for (int j = 0; j < arr.Length - 1; j++)
+            {
+                if (arr[j] > arr[j + 1])
+                {
+                    sum += arr[j];
+                    count1++;
+                }
+                else
+                {
+
+                    count1 = 1;
+                    sum = 0;
+                }
+
+                if (count1 == max)
+                {
+                    sum1 = sum + arr[j + 1];
+                    Console.WriteLine(max);
+                    if (sum1 > temp)
+                        temp = sum1;
+
+
+
+                }
+
+                Console.WriteLine(temp);
+
+            }
+
+
+
+        }
+    }
+}
+
+INCREASING SEQUENCE
+-------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int count1 = 1;
+            int finalsum = 0;
+            int count = 1;
+            int max = 0;
+            int[] arr = { 1, 2, 4, 3, 8, 6, 5, 3, 1, 2, 6, 9 };
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                if (arr[i] < arr[i + 1])
+                {
+                    count++;
+                }
+                else
+                {
+                    count = 1;
+                }
+                if (count > max)
+                {
+                    max = count;
+                }
+            }
+            Console.WriteLine(max);
+            int sum = 0;
+            int sum1 = 0;
+
+            for (int j = 0; j < arr.Length - 1; j++)
+            {
+                if (arr[j] < arr[j + 1])
+                {
+                    sum+=arr[j];
+                    count1++;
+                }
+                else
+                {
+
+                    count1 = 1;
+                    sum = 0;
+                }
+                
+                
+
+                    Console.WriteLine(count1);
+                if (count1 == max)
+                {
+                    sum1 = sum+arr[j+1];
+                    Console.WriteLine(max);
+
+                }
+                   
+                }
+            Console.WriteLine(sum1);
+
+        }
+
+
+
+    }
+    }
+
+
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+//-------METTAL LOGICALS
+//-------M2
+
+ADDITION OF STRINGS (BIG INT)
+-----------------------------
+using System;
+using System.Collections.Generic;
+
+//Read only region start
+public class UserMainCode
+{
+    public string addNumberStrings(string input1,string input2)
+    {
+        //Read only region end
+        //Write code here
+        
+		char[] num1=input1.ToCharArray();
+		char[] num2=input2.ToCharArray();
+		string OUTPUT="";
+		int carry=0,sum = 0;
+		int i,j;
+		int count=0;
+		i=num1.Length-1;
+		j=num2.Length-1;
+		while(i>=0 || j>=0)
+			{
+			if(i>=0 && j>=0){//if any of the number is smaller than other number than it will get added to the ouput string automatically
+               sum = (int)Char.GetNumericValue(num1[i])+(int)Char.GetNumericValue(num2[j])+carry;
+				if(sum>9){
+					carry = sum/10;
+					sum = sum%10;					
+				}
+				else
+					carry = 0;
+				//OUTPUT += sum.ToString();
+				i--;
+				j--;
+			}
+			else{
+				if(i>=0){
+					sum = (int)Char.GetNumericValue(num1[i])+carry;
+					if(sum>9){
+					carry = 1;
+					sum = sum%10;					
+				}
+				else
+					carry = 0;
+					i--;
+				}
+				else if(j>=0){
+					sum = (int)Char.GetNumericValue(num2[j])+carry;
+					if(sum>9){
+					carry = 1;
+					sum = sum%10;					
+				}
+				else
+					carry = 0;
+					j--;
+				}
+				else
+					break;
+				if(sum>9){
+					carry = 1;
+					sum = sum%10;					
+				}
+				else
+					carry = 0;
+			}
+				OUTPUT += sum.ToString();
+			
+		}
+		if(carry>0)
+			OUTPUT += carry.ToString();
+		char[] charArray = OUTPUT.ToCharArray();
+    Array.Reverse( charArray );
+
+		return new String(charArray);
+    }
+}
+
+FIND POSSIBLE WORDS
+--------------------
+
+/*
+ * Identify Possible Words
+ * ======== ======== =====
+ * 
+ * @author Hardeep Singh
+ * @since 29-12-2018
+ */
+using System;
+using System.Collections.Generic;
+
+//Read only region start
+public class UserMainCode
+{
+    public string identifyPossibleWords(string input1,string input2)
+    {
+        //Read only region end
+        //Write code here
+        //---break input2 in seperate suspect words
+		bool matchFound = false;
+		String output = "";
+		String[] suspects = input2.ToUpper().Split(':');
+		//---break input1 in 2 parts : before '_' and after '_'
+		String[] victims = input1.ToUpper().Split('_');
+		//---iterate on each suspect word in suspects 
+		foreach(String suspect in suspects){
+			if(suspect.Length == input1.Length && suspect.StartsWith(victims[0]) && suspect.EndsWith(victims[1])){
+				//----the next if will put : before every word after first word
+				if(matchFound)
+				//----it is equivalent to if(matchFound==true)
+				{ 
+					output += ":";
+				}
+				matchFound = true;
+				output += suspect.ToUpper();
+			}
+		}
+		if(!matchFound)
+			output = "ERROR-009";
+		return output;
+	}
+}
+
+CYCLIC ORDER
+-------------
+
+using System;
+using System.Collections.Generic;
+
+//Read only region start
+public class UserMainCode
+{
+    public int sumOfSumsOfDigits(int input1)
+    {
+        //Read only region end
+        //Write code here
+     int n=input1,i=0, result = 0,sum=0;
+		for( ; input1>0 ;)
+		{
+			int digit = input1%10;
+			sum = sum + digit;			
+			result=result+sum;
+			input1 = input1/10;
+		}
+		return result;   
+    }
+}
+
+DECREASING SEQUNCE METTAL
+-------------------------
+using System;
+using System.Collections.Generic;
+
+//Read only region start
+public class UserMainCode
+{
+    //Assume following return types while writing the code for this question. 
+    public class Result
+    {
+		public int output1;
+		public int output2;
+    }
+
+    public Result decreasingSeq(int[] input1,int input2)
+    {
+        //Read only region end
+        //Write code here
+		int[] arr = input1;
+        int noSeq=0, maxLen=0, tempLen=1;
+		bool seqFound = false;
+		for(int i=0;i<input2-1;i++){
+			if(arr[i]>arr[i+1]){
+				if(seqFound==false)
+					noSeq++;
+				seqFound = true;				
+				tempLen++;
+				if(maxLen<tempLen)
+						maxLen = tempLen;
+			}
+			else{
+				if(seqFound==true){					
+					seqFound=false	;				
+				}
+			if(seqFound==false)
+				tempLen = 1;
+			}
+		}
+		
+		Result r = new Result();
+		r.output1 = noSeq;
+		r.output2 = maxLen;
+		
+		return r;
+    }
+}
+
+
+//1. common and uncommon:
+-------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace _1_new
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int j = 0;
+            Console.WriteLine("Enter the first string");
+            string s1 = Console.ReadLine();
+            char[] arr_1 = s1.ToCharArray();
+            Console.WriteLine("Enter the second string");
+            string s2 = Console.ReadLine();
+            char[] arr_2 = s2.ToCharArray();
+            string str1 = "";
+            string str2 = "";
+            //first case
+            for (int i = 0; i < arr_1.Length; i++)
+            {
+                bool b1 = arr_2.Contains(arr_1[i]);
+                if (b1 == true)
+                {
+                    str1 = (str1 + arr_1[i].ToString());
+                }
+            }
+            //Console.WriteLine("first String : " +str1);   //first compare with 2nd
+
+            for (int i = 0; i < arr_2.Length; i++)
+            {
+                bool b1 = arr_1.Contains(arr_2[i]);
+                if (b1 == true)
+                {
+                    str2 = (str2 + arr_2[i].ToString());
+                }
+            }
+
+            //Console.WriteLine("Second string :" + str2);   //2nd compare with first
+
+            Console.WriteLine(str1+str2);
+  
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------
+//2. vowels and consonats:
+--------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace _1_new
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int j = 0;
+            Console.WriteLine("Enter the first string");
+            string s1 = Console.ReadLine();
+            char[] arr_1 = s1.ToCharArray();
+
+            Console.WriteLine("Enter:\n1. for vowels\n2. for consonants");
+            int num = Convert.ToInt32(Console.ReadLine());
+          
+            string str1 = "";
+            string str2 = "";
+            //first case
+            for (int i = 0; i < arr_1.Length; i++)
+            {
+                if (num == 1)
+                {
+                    
+                    if (arr_1[i] == 'a' || arr_1[i] == 'e' || arr_1[i] == 'i' || arr_1[i] == 'o' || arr_1[i] == 'u')
+                    {
+                        str1 = (str1 + arr_1[i].ToString());
+                    }
+                }
+                else
+                {
+                    if (arr_1[i] != 'a' && arr_1[i] != 'e' && arr_1[i] != 'i' && arr_1[i] != 'o' && arr_1[i] != 'u')
+                    {
+                        str1 = (str1 + arr_1[i].ToString());
+                    }
+                }
+
+            }
+           
+
+            Console.WriteLine(str1);
+  
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------
+3. longest subsequence for positive or negative:
+-------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace _1_new
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int sum = 0, count = 0, max = 0, temp_sum = 0;
+            int[] s = { 1, 2, -8, -5, -9, -3, 7, 8, 4, -12, -6, 5, 8, 7, 8, -8, -1, -7, -1, 7, 8, -8, -1, -7, -1 };
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] < 0)                                //for -tive seq just reverse the condition #1
+                {
+                    count++;
+                }
+                else
+                {
+                    count = 0;
+                }
+                if (count > max)
+                {
+                    max = count;
+                }
+            }
+            for (int j = 0; j < s.Length; j++)
+            {
+                if (s[j] < 0)                                //#2
+                {
+                    temp_sum += s[j];
+                    count++;
+                    if (count == max)
+                    {
+                        sum += temp_sum;
+                    }
+                }
+                else
+                {
+                    temp_sum = 0;
+                    count = 0;
+                }
+            }
+            Console.WriteLine(sum);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------
+4. 
+//input1: Today is a Nice day
+-----------------------------
+input2: 41
+ouput: iNce doTday
+
+code:
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		String s = "Today is a Nice Day";
+		int num = 41;
+		int num2 = num%10;
+		num/=10;
+		int num1 = num%10;
+		string[] str = s.Split(' ');
+		string s1 = str[num1-1];
+		string s2 = str[num2-1];
+		string s_1 = "";
+		string s_2 = "";
+		if(s1.Length %2==0)
+		{
+			s_1 = s1.Substring(0,s1.Length/2);
+			char[] ch = s_1.ToCharArray();
+		    Array.Reverse(ch);
+			string _s = new String(ch);
+			s_1 = (_s+s1.Substring((s1.Length/2)));
+		}
+		else
+		{
+			s_1 = s1.Substring(0,s1.Length/2+1);
+			char[] ch = s_1.ToCharArray();
+		    Array.Reverse(ch);
+			string _s = new String(ch);
+			s_1 = (_s+s1.Substring((s1.Length/2)));
+		}
+		
+		if(s2.Length%2==1)
+		{
+			s_2 = s2.Substring(0,s2.Length/2+1);
+			char[] ch = s_2.ToCharArray();
+		    Array.Reverse(ch);
+			string _s = new String(ch);
+			s_2 = (_s+s2.Substring((s2.Length/2)));
+		}
+		else
+		{
+			s_2 = s2.Substring(0,s2.Length/2);
+			char[] ch = s_2.ToCharArray();
+		    Array.Reverse(ch);
+			string _s = new String(ch);
+			s_2 = (_s+s2.Substring((s2.Length/2)));
+		}
+		Console.WriteLine(s_1 +' '+ s_2);
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+5. Positive number of subsequence ,sum and all
+
+code:
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+		  int sum = 0, count = 0, max = 0, temp_sum = 0;
+		  int temp=1, num=0;
+            int[] s = { -1, 2, -8, -5, -9, -3, 7, 8, 4, -12, -6, 5, 8, 7, 8, -8, -1, -7, -1, 7, 8, -8, -1, -7, -1 };
+            for(int i =0;i<s.Length;i++)
+			{
+				if(s[i]>0)
+				{
+					count++;
+					if(temp==1)
+					{
+						num++;
+					}
+					temp++;
+				}
+				else
+				{
+					count=0;
+					temp=1;
+				}
+				if(count>max)
+				{
+					max=count;
+				}
+			}
+		int[] arr = new int[max];
+		int k=0;
+		int c=0;
+		    for(int j =0;j<s.Length;j++)
+			{
+				if(s[j]>0)
+				{
+					temp_sum+=s[j];
+					count++;
+					if(count==max)
+					{
+						//Console.WriteLine(j);
+						for(int i =j;s[i]>0;i--)
+						{
+				             arr[k]=s[i];
+							 k++;
+						}
+						sum+=temp_sum;
+					}
+				}
+				else
+				{
+					temp_sum=0;
+					count=0;
+				}
+			}
+		Array.Reverse(arr);
+		for(int i=0;i<arr.Length;i++)
+		{
+			Console.Write(arr[i]+" ");
+		}
+		Console.WriteLine("\n");
+		Console.WriteLine(max);
+		Console.WriteLine("\n");
+		Console.WriteLine(sum);
+		Console.WriteLine("\nNumber of possible sequence\n");
+	    Console.WriteLine(num);
+	}
+}
+
+output:
+5 8 7 8 
+
+4
+
+
+28
+
+Number of possible sequence
+
+4
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+// odd even positive 
+23456=peoeoe.
+--------------------
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n;
+           n=int.Parse( Console.ReadLine());
+            string str = "";
+            if(n>0)
+            {
+                str = "p";
+            }
+            else
+            {
+                str = "n";
+            }
+            int len = (n.ToString().Length);
+            int[] ar = new int[len];
+            for (int i = 0; i<len;i++)
+            {
+                ar[i] = n % 10;
+                n = n / 10;
+            }
+            Array.Reverse(ar);
+            for(int i=0;i<len;i++)
+            {
+                if(ar[i]%2==0)
+                {
+                    str += "e";
+                }
+                else
+                {
+                    str += "o";
+                }
+            }
+            Console.WriteLine(str);
+        }
+    }
+}
+
+
+
+DECREASING SEQUENCE mile 2
+---------- -------- ---- --
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int count1 = 1;
+            int finalsum = 0;
+            int count = 1;
+            int max = 0;
+            int temp = 0;
+            int[] arr = { 1, 2, 4, 3, 8, 6, 5, 3, 1, 9, 8, 7, 6, 5 };
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                if (arr[i] > arr[i + 1])
+                {
+                    count++;
+                }
+                else
+                {
+                    count = 1;
+                }
+                if (count > max)
+                {
+                    max = count;
+                }
+            }
+            Console.WriteLine(max);
+            int sum = 0;
+            int sum1 = 0;
+
+            for (int j = 0; j < arr.Length - 1; j++)
+            {
+                if (arr[j] > arr[j + 1])
+                {
+                    sum += arr[j];
+                    count1++;
+                }
+                else
+                {
+
+                    count1 = 1;
+                    sum = 0;
+                }
+
+                if (count1 == max)
+                {
+                    sum1 = sum + arr[j + 1];
+                    Console.WriteLine(max);
+                    if (sum1 > temp)
+                        temp = sum1;
+
+
+
+                }
+
+                Console.WriteLine(temp);
+
+            }
+
+
+
+        }
+    }
+}
+
+INCREASING SEQUENCE
+-------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int count1 = 1;
+            int finalsum = 0;
+            int count = 1;
+            int max = 0;
+            int[] arr = { 1, 2, 4, 3, 8, 6, 5, 3, 1, 2, 6, 9 };
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                if (arr[i] < arr[i + 1])
+                {
+                    count++;
+                }
+                else
+                {
+                    count = 1;
+                }
+                if (count > max)
+                {
+                    max = count;
+                }
+            }
+            Console.WriteLine(max);
+            int sum = 0;
+            int sum1 = 0;
+
+            for (int j = 0; j < arr.Length - 1; j++)
+            {
+                if (arr[j] < arr[j + 1])
+                {
+                    sum+=arr[j];
+                    count1++;
+                }
+                else
+                {
+
+                    count1 = 1;
+                    sum = 0;
+                }
+                
+                
+
+                    Console.WriteLine(count1);
+                if (count1 == max)
+                {
+                    sum1 = sum+arr[j+1];
+                    Console.WriteLine(max);
+
+                }
+                   
+                }
+            Console.WriteLine(sum1);
+
+        }
+
+
+
+    }
+    }
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
