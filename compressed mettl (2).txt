@@ -1,0 +1,423 @@
+/*1)ALTERNATE ADD_SUB IN N
+int res1=0,res2=0,res=0;for(int i=0;i<input1;i++) { if(input2==1) {  if(i%2==0){  res1+=input1-i;} else{ res2-=input1-i; }}if(input2==2){if(i==0||i%2!=0){res1+=input1-i;}else{res2-=input1-i;
+}}res=res1+res2;}return res;
+____________________________________________________________________
+2)GENERATE SERIES AND FIND NTH ELEMENT
+int[] arr=new int[300];arr[0]=input1;arr[1]=input2;arr[2]=input3;int output=0;int d1=input2-input1;int d2=input3-input2;for(int i=3;i<input4;i+=2){ arr[i]=arr[i-1]+d1;arr[i+1]=arr[i]+d2;}for(int i=0;i<input4;i++) {if(i==input4-1){
+output=arr[i];}} return output;  
+____________________________________________________________________
+3)CALCULATE THE SUM OF NON PRIME INDEX VALUES
+int sum=input1[0],k=1;for(int i=1;i<input2;i++){for(int j=2;j<i;j++){if(i%j==0){k++;}}if(k!=0){sum+=input1[i];}k=0;}return sum;
+____________________________________________________________________
+4)REMOVE DIGIT TO FORM PALINDROME
+String s=""+input1;int len=s.length();int[] a=new int[len];for(int i=0;i<len;i++){a[i]=Character.getNumericValue(s.charAt(i));}int output=0;for(int i=0;i<len;i++){if(a[i]==a[len-(i+1)])continue;else{if(a[i]==a[len-(i+2)]){output=a[len-(i+1)];
+break;} else if(a[i+1]==a[len-(i+1)]){output=a[i];break;}}}if(output==0){return -1;}return output;}}
+__________________________________________________________________________________________
+CALCULATE SUM OF PRIME INDEX VALUES
+int[] input1 = {10, 20, 30, 40, 50, 60, 70, 80};int sum = 0;for(int i = 2; i < input1.Length; i++){if(checkPrime(i) == 0){sum += input1[i];}}Console.WriteLine(sum);}public static int checkPrime(int n){int annu = 0;for(int i = 2; i <= n/2; i++){if(n%i == 0){annu = 1;break;}}
+if(annu == 0)return 0;else return -1;
+___________________________________________________________________________
+VOWELS AND CONSONANTS
+string input1="Wipro Technologies";int input2=0;int input3=0;input1=input1.ToUpper();string s="";foreach(char c in input1){if (input2==0){if(!(c=='A'||c=='E'||c=='I'||c=='O'||c=='U')&&(c>=65&&c<=90))s+=c;}if (input2==1)
+{if(c=='A'||c=='E'||c=='I'||c=='O'||c=='U')s+=c;}}if (input3==0)Console.WriteLine(s.ToUpper());elseConsole.WriteLine(s.ToLower());
+_______________________________________________________________________________
+SAME AND DIFFERENT
+string input1="Wipro";string input2="Technologies";int input3=0;int input4=0;string s="";input1=input1.ToLower();input2=input2.ToLower();
+for(int i=0;i<input1.Length;i++){if(input3==0){if(!input2.Contains(input1[i])){s+=input1[i];}}else{if(input2.Contains(input1[i])){s+=input1[i];}}}
+for(int i=0;i<input2.Length;i++){if (input3==0){if(!input1.Contains(input2[i])){s+=input2[i];}}else{if(input1.Contains(input2[i])){s+=input2[i];}}}if (input4==0)Console.WriteLine(s.ToUpper());elseConsole.WriteLine(s.ToLower());
+__________________________________________________________________________________
+PRIME DIGITS
+string h="";for(int i=0;i<a.Length;i++){if(a[i]=='2' || a[i]=='3' || a[i]=='5' || a[i]=='7'){g+=Convert.ToString(a[i]);}else{q++;continue;}}for(int i=0;i<g.Length;i++){
+c+=Convert.Toint32(g[i]-'0')}h=Convert.ToString(c);if(q==a.Length){g=Convert.ToString(a[0]);h=Convert.ToString(a.Last());g=g+ ":" +h;return g;}else{g=g+":"+h;return g;}
+___________________________________________________________________________________
+PROCESS TWO WORDS
+string s1="Today is a nice day";int n=14;string[] s=s1.Split(' ');Program p=new Program();Console.WriteLine(p.run(s[(n/10)%10-1])+' '+p.run(s[n%10-1]));}public string run(string s){
+if(s.Length%2==0){char[] c=(s.Substring(0,(s.Length/2))).ToCharArray();Array.Reverse(c);return s.Substring(s.Length/2,s.Length/2).ToString()+new string(c);}else {
+char[] c=(s.Substring(0,((s.Length+1)/2))).ToCharArray();Array.Reverse(c);return s.Substring((s.Length-1)/2,(s.Length+1)/2)+new string(c);}
+_______________________________________________________________________________________
+PRIME CHARS
+String s="WIPRO";int sum=0;String str="";String str1="";for(int i=0;i<s.Length;i++) {char ch=s.ElementAt(i);int n=ch;
+if(n==67||n==71||n==73||n==79||n==83||n==89||n==97||n==101||n==103||n==109||n==113) {str+=ch;sum+=n;}}if(sum>0){str1=str+":"+sum;}else{char c=s.ElementAt(0);
+char c1=s.ElementAt(s.Length-1);str1=c+":"+c1;}Console.WriteLine(str1);
+2ND METHOD:
+string input1="WIPRO";int sum=0;string s="";Program p=new Program();foreach(char c in input1){if(p.prime((int)c)){s+=c;sum+=(int)c;}}s=s+':'+sum;Console.WriteLine(s);}public bool prime(int n){int k=0;for(int i=2;i<n;i++){
+if(n%i==0){k++;}}if(k==0)return true;else return false;
+_______________________________________________________________________________________
+INCREASING EVEN
+int[] input1={9,2,4,6,8,10,11,7,9,2,4,6,8,10};int count=1;int maxcount=0;for(int i=0;i<input1.Length-1;i++){if((input1[i]%2==0&&input1[i+1]%2==0)&&(input1[i]<input1[i+1]))
+{count++;}else if(count>maxcount){maxcount=count;count=1;}}if(count>maxcount){maxcount=count;}Console.WriteLine(maxcount);
+_______________________________________________________________________________________
+INCREASING NUMBER
+int count1 = 1;int finalsum = 0;int count = 1;int max = 0;int[] arr = { 1, 2, 4, 3, 8, 6, 5, 3, 1, 2, 6, 9 };for (int i = 0; i < arr.Length - 1; i++)
+{ if (arr[i] < arr[i + 1]){ count++;}else{count = 1;}if (count > max){ max = count;}}Console.WriteLine(max);int sum = 0;int sum1 = 0;for (int j = 0; j < arr.Length - 1; j++)
+{if (arr[j] < arr[j + 1]){sum+=arr[j];count1++;}else{count1 = 1; sum = 0;}Console.WriteLine(count1);if (count1 == max){ sum1 = sum+arr[j+1]; Console.WriteLine(max);}}Console.WriteLine(sum1);}}}}
+_______________________________________________________________________________________
+LONGEST SEQUENCE OF ODD NUMBER
+int[] input1={13,15,12,18,18,14,5,12,13,32,33,5,1,93,75,25,11,9,77,78,79};int input2=21;int count=0,k=0;for(int i=0;i<input2;i++) {if(input1[i]%2!=0)
+{count++;if(count>k){k=count;}}	else{count=0;}}if(k==0)Console.Write(-1);else Console.WriteLine(k);
+_______________________________________________________________________________________
+LONGEST SEQUENCE OF NEGATIVE NUMBER
+int[] input1={4,-5,-6,-4,-2,-7,-8,7,-8,-9,-10};int input2=9;int k=0,l=0;for(int i=0;i<input2-1;i++){if(input1[i]<0&&input1[i+1]<0){k++;}else if(input1[i]<0&&input1[i+1]>=0){k++;if(l<k){l=k;}k=0;}	}
+if(input1[input2-1]<0){k++;if(l<k)l=k;}Console.WriteLine(l);
+_______________________________________________________________________________________
+RSF(2 DIGIT)
+int input1=45629;Program p=new Program();while(input1>99){input1=p.sub(input1);}Console.WriteLine(input1);}public int sub(int n){int k=n%10;n/=10;int s=0;int i=0;
+while(n>0){s=Math.Abs(((n%10)-k))*(int)Math.Pow(10,i++)+s;k=n%10;n/=10;}return s;
+______________________________________________________________________________________
+RSF (1 DIGIT)
+int input1=45629;Program p=new Program();while(input1>99){input1=p.sub(input1);}Console.WriteLine(input1);}public int sub(int n){int k=n%10;n/=10;
+int s=0;int i=0;while(n>0){s=Math.Abs(((n%10)-k))*(int)Math.Pow(10,i++)+s;k=n%10;n/=10;}return s;
+____________________________________________________________________________________
+MAXMIN
+int[] input1={1,5,4,2,7,8,7,9,5,1,2};int input2=11;//codeint  n=input1.Max();
+for(int i=0;i<input2;i++){input1[i]=(input1[i]+n)*n;  Console.Write(input1[i]+":");}
+____________________________________________________________________________________
+DECREASING SEQUENCE
+int c=0,c1=0,max=0;for(int i=0;i<input2-1;i++){if(input1[i]>input1[i+1]){c++;}else{if(c!=0){c1++;if(c+1>max){max = c+1;}	c=0;	}}if(c!=0 && i==input2-2)
+{c1++;if(c+1>max){max = c+1;}c=0;} }Result r = new Result();r.output1 = c1;r.output2 = max;return r; 
+__________________________________________________________________________________
+ARRAY OPERATION
+int n = Convert.ToInt32(Console.ReadLine());int[] input = new int[n];for (int i = 0; i < n; i++){ input[i] = Convert.ToInt32(Console.ReadLine());}
+Array.Sort(input); int min = input[0];for (int j = 0; j < input.Length; j++){ input[j] = input[j] - min; }int max = input.Max();for (int j = 0; j < input.Length; j++)
+{input[j] = input[j] * max; }for(int i=0;i<input.Length;i++)Console.WriteLine(input[i]);
+____________________________________________________________________________
+SUM OF PRIME NUMBERS IN ARRAY
+string s = Console.ReadLine();int sum = 0;int input = Convert.ToInt32(s);for(int i=0;i<s.Length;i++){if(s[i]=='2'|| s[i] == '3' || s[i] == '5' || s[i] == '7' ){ sum += s[i] - '0';  } }Console.WriteLine(sum);
+___________________________________________________________________________
+ODD EVEN NOEP PRIME PACKAGE
+int n;n=int.Parse( Console.ReadLine());string str = "";if(n>0){str = "p";}else{str = "n";}int len = (n.ToString().Length);int[] ar = new int[len];
+for (int i = 0; i<len;i++) { ar[i] = n % 10; n = n / 10;}Array.Reverse(ar);for(int i=0;i<len;i++) {if(ar[i]%2==0){str += "e";}else{str += "o";}}Console.WriteLine(str);
+______________________________________________________________________________
+CYCLIC ORDER
+int n=input1,i=0, result = 0,sum=0;for( ; input1>0 ;){int digit = input1%10;sum = sum + digit;result=result+sum;input1 = input1/10;}return result;   
+_______________________________________________________________________________
+PUBLIC CLASS FREQUENCY
+int i,j;int maxdigit=0;int input1[]={1234,666,201,278};int digit[]=new int[10];for(i=0;i<10;i++){int num=input1[i];while(num>0){int rem=num%10;System.out.println(rem);
+for( j=0;j<10;j++){if(num==j){System.out.println(true);digit[j]=j+1;System.out.println(digit[j]);}num=num/10;System.out.println(num);}}
+int max=digit[0];for(i=0;i<10;i++){if(digit[i]>=max){if(i>maxdigit){max=digit[i];max=i;}}}}System.out.println(maxdigit); 
+____________________________________________________________________________________
+SUM OF POWER OF DIGIT
+int sum=0;int a=input1%10;while(input1!=0){input1=input1/10;int b=input1%10;sum+=(int)Math.pow(b,a);}return sum+1;
+_____________________________________________________________________________________
+GET CODE USING STRING
+int len=0,len1=0;String str[]=input1.split(" ");int n=str.length;for(int i=0;i<n;i++){len+=str[i].length();}while(len>0){len1+=len%10;len/=10;}len1+=len;return len1;
+________________________________________________________________________
+SUM DIGIT CYCLIC
+int sum=0,sum1=0;while(input1!=0){sum+=input1%10;sum1+=sum;input1/=10;}return sum1;
+___________________________________________________________________
+SUM OF NON PRIME
+int num=0;int sumOfElm=0;for(int i=1;i<input2;i++){int count=0;for(num=i;num>=1;num--){if(i%num==0){count+=1;}}if(count!=2){sumOfElm+=input1[i];}}sumOfElm+=input1[0];return sumOfElm;
+___________________________________________________________________
+SUM CYCLIC
+int s=0,s1=0,s2=input1;int r=0;while(input1!=0){while(input1!=0){s+=input1%10;input1/=10;}s1+=s;s=0;s2/=10;input1=s2;}return s1;}
+____________________________________________________________________________
+LOCALISATION
+String s="Local";String st = ""; if(s.length()>10){char ch=s.charAt(0);int l=s.length()-2;char ch1=s.charAt(s.length()-1);st=st+ch+l+ch1;System.out.println(st);}else{System.out.println(s);}
+___________________________________________________________________
+ Longest Odd Sequence
+public int getLen_LS_ODD(int[] input1,int input2){int count=0,k=0;for(int i=0;i<input2;i++){
+if(input1[i]%2!=0){count++;if(count>k){k=count;}}else{count=0;}}if(k==0)return -1;else return k;
+_______________________________________________________________________________
+DECREASING SEQUENCE
+int count=1,k=0;int seq=0;for(int i=0;i<input2-1;i++){if(input1[i]>input1[i+1]){
+count++;if(k<count){k=count;}if(count==2){seq++;}}else{count=1;}}return new Result(seq,k);}
+_________________________________________________________________________________________
+SINGLE ENCODED ARRAY
+int a[]=new int[input2];int i,sum=0;a[input2-1]=input1[input2-1];for(i=input2-2;i>=0;i--){a[i]=input1[i]-a[i+1];}for(i=0;i<a.length;i++){
+sum+=a[i];}return new Result(a[0],sum)
+__________________________________________________________________________________________
+ADD USING STRINGS
+BigInteger b1=new BigInteger(input1);BigInteger b2=new BigInteger(input2);BigInteger sum=b1.add(b2);return sum.toString()
+OR
+ADDITION USING STRING
+int i=input1.Length-1;int j=input2.Length-1;string sum="";int k=0,l=0;for(;i>=0||j>=0;i--){
+if(i<0){k=int.Parse(input2[j].ToString());}else if(j<0){k=int.Parse(input1[i].ToString());}
+else{k=int.Parse(input1[i].ToString())+int.Parse(input2[j].ToString());}if(l>0){
+k=k+l;l=0;}if(k>9){l=(k/10)%10;k=k%10;}sum=k+sum;if(i==0&&j==0&&l>0){sum=l+sum;}j--;}return sum;
+__________________________________________________________________________________________
+POSSIBLE WORDS
+StringBuffer sb=new StringBuffer();String words[]=input2.split(":");int pos=input1.indexOf("_");
+for(String s:words){if(s.length()==input1.length()){
+if(s.substring(0,pos).equalsIgnoreCase(input1.substring(0,pos))&& s.substring(pos+1,s.length()).equalsIgnoreCase(input1.substring(pos+1,input1.length()))){
+sb.append(s.toUpperCase()+":");}}}if(sb.length()>0)return sb.toString().substring(0,sb.length()-1);else return "ERROR-009";
+_____________________________________________________________________________________________________________________________________
+JUMBLE WORDS
+input1=input1.toUpperCase();String s[]=input1.split(" ");String output="";if(input2==1){
+for(int i=0;i<s.length();i++){String word="";for(int j=0;j<s[i].length();j++){if(j%2==0)word+=s[i].charAt(j);
+}for(int j=s[i].length()-1;j>0;j--){if(j%2!=0)word+=s[i].charAt(j);}output=output+words+" ";}}if(input2==2){
+for(int i=0;i<s.length();i++){String word="";for(int j=0;j<s[i].length();j++){if(j%2==0)word+=s[i].charAt(j);
+}for(int j=0;j<s[i].length();j++){if(j%2!=0)word+=s[i].charAt(j);}output=output+words+" ";}}return output.trim();
+_____________________________________________________________________________________________________________________
+USER ID GENERATION
+int len1=input1.length();int len2=input2.length();String s=""+input3;int c=Character.getNumericValue(s.charAt(input4-1));
+int d=Character.getNumericValue(s.charAt(s.length()-input4));char sName='a';String lName="";
+String str="";if(len1>len2){sName=input2.charAt(len2-1);lName=input1;}else if(len2>len1){
+sName=input1.charAt(len1-1);lName=input2;}else if(len1==len2){if(input2.charAt(0)>input1.charAt(0)){
+sName=input1.charAt(len1-1);lName=input2;}else{sName=input2.charAt(len2-1);lName=input1;}}
+String f=String.valueOf(sName)+lName;for(int i=0;i<f.length();i++){if(Character.isUpperCase(f.charAt(i))){
+str+=String.valueOf(Character.toLowerCase(f.charAt(i)));}else{str+=String.valueOf(Character.toUpperCase(f.charAt(i)));}}return str+c+d;
+
+_____________________________________________________________________________________________
+stable unstable password
+ int res=0;int arr[]={input1,input2,input3,input4,input5};int sumOfStable=0;int sumOfUnstable=0;
+for(int i=0;i<arr.length;i++){int input=arr[i];boolean status=isStable(input);if(status){sumOfStable=sumOfStable+input;}
+else{sumOfUnstable=sumOfUnstable+input;}}res=sumOfStable-sumOfUnstable;return res;}public boolean isStable(int input){boolean status=false;
+int[] arr=new int[10];int temp=0;while(input>0){int rem=input%10;arr[rem]++;input/=10;}int countvalue=0;for(int i=0;i<arr.length;i++){
+int value=arr[i];if(value!=0 && countvalue==0){countvalue=value;}if(value!=0 && countvalue!=value){temp=1;
+break;}}if(temp==0){status=true;}return status;
+______________________________________________________________________________________________
+Sum of Stable- Unstable
+ public int findPassword(int input1,int input2,int input3,int input4,int input5)int count=0,dig=0,temp=0,sum=0,sum1=0;
+int[] n={input1,input2,input3,input4,input5};int [] a=new int[10];for(int i=0;i<n.Length;i++){int num= n[i];while(num!=0){temp=num%10; a[temp]=a[temp]+1;
+num=num/10;}for(int k=0;k<a.Length;k++){if(a[k]!=0){dig=a[k];break;}}for(int k=0;k<a.Length;k++){if(a[k]!=dig&&a[k]!=0)
+{count++;break;}}if(count==1){sum=sum+n[i];}else{sum1=sum1+n[i];}Array.Clear(a,0,a.Length);num=0;dig=0;count=0;}return sum1-sum;; }
+______________________________________________________________________________
+Stable-Unstable(max-min)
+ int[] input1 = { 2255, 123, 4455, 1223, 119 };int input2 = input1.Length, temp = 0, num = 0, dig = 0, count = 0, stable = 0, unstable = 0, sum = 0;
+int[] a = new int[10];int[] s = new int[input2];int s1 = 0, u1 = 0, min = 0, max = 0;int[] u = new int[input2];for (int i = 0; i < input2; i++)
+{num = input1[i];while (num != 0){temp = num % 10;a[temp] = a[temp] + 1;num = num / 10;}for (int j = 0; j < a.Length; j++){if (a[j] != 0){dig = a[j];
+break;}}for (int j = 0; j < a.Length; j++) {if (a[j] != 0 && a[j] != dig){ count++;break;}}if (count == 1){ u[u1] = input1[i];u1++;}
+else{s[s1++] = input1[i];} Array.Clear(a, 0, a.Length);num = 0;count = 0;dig = 0;}max = s.Max(); min = u[0];for (int m = 0; m < u.Length; m++){
+if (min > u[m] && u[m] != 0){min = u[m];}}sum = max - min;Console.WriteLine(sum);}}
+___________________________________________________________________________________________________________________________
+NIAMBER
+int sum=input1.charAt(0)-48;int initial=input1.charAt(0)-48;String res="";for(int i=1;i<input1.length();i++){
+sum+=input1.charAt(i)-48;if((sum+initial)%2!=0 && i<input1.length()-1){res+=sum;initial=input1.charAt(i+1)-48;
+sum=input1.charAt(i+1)-48;i++;}if(i==input1.length()-1){res+=sum;}}return Integer.parseInt(res);
+_______________________________________________________________________________________________________
+sum of smallest two digit num
+int arr[]={input1,input2,input3,input4,input5};int sum=0;for(int j=0;j<arr.length;j++){String s=Integer.toString(arr[j]);char ar[]=s.toCharArray();
+Arrays.sort(ar);for(int i=0;i<arr.length;i++){ar[i]=)(char)(ar[i]-48);}int x=ar[0]*10+ar[1];sum+=x;}return sum;}
+_____________________________________________________________________________________________
+SINGLE ENCODED STRING
+int[] a=new int[10];int i,sum=0;Result obj= new Result();a[input2-1]=input1[input2-1];for(i=input2-2;i>=0;i--){a[i]=input1[i]-a[i+1];}for(i=0;i<a.Length;i++){sum+=a[i];}
+obj.output1= a[0];obj.output2= sum;return obj;
+____________________________________________________________________________________________
+SUM OF LONGEST DECREASING SEQUNCE
+int arr[]={-12,-4,-6,7,8,9,-5,-4,-3,-8};int max=0,newsum=0,j=0;for(int i=0;i<arr.length;i++){ 
+if(arr[i]<0){ int  sum=0,count=0;for( j=i;j<arr.length;j++){if(arr[j]<0){sum=sum+arr[j];count++;}
+else{break;}}if(count>max){max=count;newsum=sum;}else if(count==max){newsum+=sum;}i=j;}
+} System.out.println(newsum);if(newsum<0)return new sum;elsereturn-1;
+__________________________________________________________________________________________________
+ODD EVEN ZEROES(NOEP)
+int input1 = 23450;String st="";String str = "";String s = Integer.toString(input1);if(input1>0){
+str=str+"p";for (int i = 0; i < s.length(); i++){if(s.charAt(i)%2==0){str=str+"e";}if(s.charAt(i)%2!=0){
+str=str+"o";}if(s.charAt(i)=='0'){str=str+"z";}} }else str=str+"n";for (int i = 0; i < s.length(); i++){
+if(s.charAt(i)%2==0){str=str+"e";}if(s.charAt(i)%2!=0){str=str+"o";}if(s.charAt(i)=='0'){str=str+"z";}}}
+System.out.println(str);
+___________________________________________________________________________________
+PERSON AND TOKDEN
+int var=0;int index=0;int count=1;int arr[]=new int[input1];for(int k=0;k<input1;k++)arr[k]=input3[k];int abc[]=new int[3];
+int flag=0;Arrays.sort(arr);int len=arr.length;for(int i=0;i<len;i++) {if(i!=len-1) {if(arr[i]+1==arr[i+1]) {
+if(var==0) {index=i;var++;}count++;if(count<3)continue;else {flag=1;break;}}else {var=0;index=0;count=1;continue;
+}}}if(flag==1) {for(int i=0;i<input1;i++) {if(input3[i]==arr[index]) { abc[0]=i;}else if(input3[i]==arr[index+1]){abc[1]=i;
+}else if(input3[i]==arr[index+2]) {abc[2]=i;}}
+String str= input2[abc[0]]+":"+input2[abc[1]]+":"+input2[abc[2]];return str;}elsereturn "NONE";
+_____________________________________________________________________________________________________
+CREATE PASSWORD
+String s1[]=divideString(input1);String s2[]=divideString(input2);String pwd=s1[2]+s2[1]+s1[0];return pwd;}
+public String[] divideString(String input){int rem=input.length()%3;int div=input.length()/3;String f=null,m=null,l=null;if(rem==1){
+f=input.substring(0,div);m=input.substring(f.length(),f.length()+div+1);l=input.substring(f.length()+m.length(),input.length());
+} if(rem==2){f=input.substring(0,div);m=input.substring(div,div+div+rem);l=input.substring(f.length()+m.length(),input.length());
+} if(rem==0){f=input.substring(0,div);m=input.substring(f.length(),f.length()+div);
+l=input.substring(f.length()+m.length(),input.length());}return new String[]{f,m,l};
+_______________________________________________________________________________________________________
+SECOND WORD UPPER CASE
+String word=input1.toUpperCase();String str1="";String str2="";String str3="";String[] s=word.split(" ");if(s.length>=2){return s[1];}elsereturn "LESS";
+_________________________________________________________________________________________
+WEIGHT OF ALPHABET
+String input=input1.toLowerCase();int count=0,sum=0;if(input2==1){for(int i=0;i<input.length();i++){char ch=input.charAt(i);
+for(char c='a';c<='z';c++){if(ch==' ' || ch=='!')continue;if(c==ch){count++;System.out.println(sum);
+sum+=count;}else{count++;}}count=0;}}else{for(int i=0;i<input.length();i++){char ch=input.charAt(i);
+if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u' ||ch==' ' || ch=='!'){continue;}for(char c='a';c<='z';c++){if(c==ch){count++;sum+=count;}else{count++;}}count=0;}}return sum;
+________________________________________________________________________________________________
+SUMEETSUM(4 INPUTS)
+int arr[]={input1,input2,input3,input4};int sum=0;for(int j=0;j<arr.Length;j++){string s=(arr[j].ToString();
+char ar[]=s.ToCharArray();Array.Sort(ar);for(int i=0;i<arr.Length;i++){ar[i]=((char)(ar[i]-48));}int x=ar[0]*10+ar[1];sum+=x;}return sum;
+________________________________________________________________________________________________________
+wweight of string multiply
+public static void main(String[] args) {
+int a[]={-2,2,1,0,-4,23,65,-6,11,12,25,17,19,20,-21,-9,6,8,1,3,2,14,-1,22,24,-1};String s="wipro limited";
+//	System.out.println(a.length);System.out.println(weightOfString(s,a));}
+public static int weightOfString(String s,int a[]){s=s.toLowerCase();int weight=0;String[] c=s.split(" ");int index=0;
+int weightArr[]=new int[c.length];for(int i=0;i<c.length;i++){weight=0;String word=c[i];int len=word.length();
+for(int j=0;j<len;j++){char c1=word.charAt(j);int num=(int)(c1-96);int value=a[num-1];if(j==0||j==len-1){
+if(value<0){value=value+num;}}weight=weight+value;}weightArr[index++]=weight;}weight=weightArr[0];
+for(int i=1;i<weightArr.length;i++){weight=weight*weightArr[i];}return weight;}
+___________________________________________________________________________________
+SUM OF ALL PRIME EXCEPT MIN
+static int primeSum(int a[]){int flag=0;int k=0;int temp[]=new int[a.length];for(int i=0;i<a.length;i++){flag=0;
+for(int j=2;j<a.length/2;j++){if(a[i]%j==0){flag=1;break;}}if(flag==0 && temp[i]!=1){temp[k++]=a[i];}}
+for(int i=0;i<temp.length;i++){System.out.print(temp[i]+" ");}int min=Integer.MAX_VALUE;int sum=0;
+for(int i=0;i<temp.length;i++){sum+=temp[i];if(temp[i]<min && temp[i]!=0){min=temp[i];}}sum-=min;return sum;}
+public static void main(String[] args) {int a[]={10,29,31,59,63,12,23,41,43};int n=a.length;System.out.println(primeSum(a));}
+_____________________________________________________________________________________
+ALPHA BETTA GAMMA
+int a[]=new int[(n1+"").length()];int b[]=new int[(n2+"").length()];int c[]=new int[(n3+"").length()];int i=0,j=0,k=0;
+int c1=0;while(n1!=0){a[i++]=n1%10;n1/=10;}Arrays.sort(a);while(n2!=0){b[j++]=n2%10;n2/=10;}Arrays.sort(b);while(n3!=0){
+c[k++]=n3%10;n3/=10;}Arrays.sort(c);n4=n4.toUpperCase();for(i=0;i<n4.length();i++){char ch=n4.charAt(i);
+if(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U') {c1++;}}int pin=a[3]*b[2]*c[0]+c1;System.out.println(a[3]+" "+b[2]+" "+c[0]+" "+c1);
+ return pin;}
+public static void main(String[] args) {int n1=9865;int n2=7654;int n3=9812;String s="JeeyA";
+System.out.println(weightofalphabetagama(n1,n2,n3,s));
+________________________________________________________________________________________
+SUM OF NON PRIME
+int num=0;int sumOfElm=0;for(int i=1;i<input2;i++){int count=0;for(num=i;num>=1;num--){if(i%num==0){count+=1;}}if(count!=2){sumOfElm+=input1[i];}}sumOfElm+=input1[0];return sumOfElm;
+__________________________________________________________________________________
+SUMEET SUM 3INPUTS
+public int findSumeetSum(int input1,int input2,int input3){
+int d = 0;int sum=0;int max1=0,max2=0;while(input1!=0){d=input1%10;if(d>max1){max2=max1;max1=d;}
+else if(d>max2){max2=d;}input1=input1/10;}sum=sum+(max1*10)+max2;System.out.println(max1+" "+max2 + " "+sum);
+max1=0;max2=0;d=0;while(input2!=0){d=input2%10;if(d>max1){max2=max1;max1=d;}else if(d>max2){max2=d;}
+input2=input2/10;}sum=sum+(max1*10)+max2;System.out.println(max1+" "+max2 + " "+sum);max1=0;max2=0;while(input3!=0){
+d=input3%10;if(d>max1){max2=max1;max1=d;}else if(d>max2){max2=d;}input3=input3/10;}sum=sum+(max1*10)+max2;
+System.out.println(max1+" "+max2 + " "+sum);max1=0;max2=0;return sum;}}
+public class UserMain{public static void main(String[] args){int n1=26674;int n2=105;int n3=37943;int a;UserMainCode abc=new UserMainCode();
+ int r=abc.findSumeetSum(n1,n2,n3);System.out.println(r);
+__________________________________________________________________________________
+ROMAN NUMBER
+string[] str= input1.Split(' ');string s= null;for(int i=0 ;i<str.Length; i++){int res=0;
+for(int j=0; j< str[i].Length; j++){int s1= value(str[i][j]);if(j+1 < str[i].Length){int s2= value(str[i][j+1]);				
+if(s1 >= s2) res= res+ s1;else {res= res+ s2 - s1;j++;}}else{res= res+ s1;}}s=s+(Convert.ToChar(res)).ToString();
+}return s;}public int value(char r) { if (r == 'I') return 1; if (r == 'V') return 5; if (r == 'X') return 10; if (r == 'L') return 50; 
+if (r == 'C') return 100; if (r == 'D') return 500; if (r == 'M') return 1000; return -1;
+_________________________________________________________________________________________________
+BOOLEAN STEP NUMBER
+string s= input1.ToString();int count=0;int t= s.Length-1;for(int i=0;i< s.Length; i++){if(i+1< s.Length){
+if((Math.Abs(s[i]- s[i+1]))==0 ||  (Math.Abs(s[i]- s[i+1]))==1)count++;elsebreak;}}if(t==count)return true;else return false;
+__________________________________________________________________________________
+NON REPEATED DIGIT COUNT
+int c = 0;int[] a = new int[10] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };while (input1 != 0){int r = input1 % 10;a[r]++;
+input1 = input1 / 10;}for(int i = 0; i < a.Length; i++){if (a[i]==1)c++;}return c;OR int count=0;String str = input1.ToString();
+for(int i=0;i<str.Length;i++){if(str.IndexOf(str[i]) == str.LastIndexOf(str[i]))count++;}return count;
+___________________________________________________________________________________
+STRING STATISTICS IS LETTER OR NUMBER
+string str= null;int sum=0, c=0;for(int i=0; i< input1.Length; i++){char b= input1[i];if(Char.IsLetter(b)){
+str =String.Concat(str,b.ToString());c++;}else sum  += Convert.ToInt32(input1[i].ToString());}
+if(string.IsNullOrEmpty(str) || sum==0) return "ZERO";return (c.ToString()+ str+ sum.ToString());
+_______________________________________________________________________________________
+FORWARD STRING
+string[] str= input1.Split(' ');string s=null;char z= 'z';char Zz= 'Z';for(int i=0; i < str.Length; i++)
+{for(int j= 0; j< str[i].Length; j++) {int t= Convert.ToInt32(str[i][j])+ Convert.ToInt32(str[i].Length);
+if(t > 90 && t <= 97)s=s+ Zz.ToString() ;  else if(t > 122)s=s+ z.ToString() ;else s=s+ (Convert.ToChar(t)).ToString();
+ }if(i < str.Length)s= s+ " ";}return s;
+__________________________________________________________________________________________
+FIND AVERAGE
+int sum=0,k=0;while(input1>0){sum=sum+input1%10;k++;input1/=10;}float i=(float)sum/(float)k;string s=i.ToString();
+string m="";int n=0,x=0;foreach(char c in s){if(c=='.'||n!=0)n++;if(n==3){x=int.Parse(c.ToString());}else if(n==4){
+if(int.Parse(c.ToString())>4)x=x+1;m=m+x;break;}else{m+=c;}}Console.WriteLine(sum+" "+k+" "+m);return double.Parse(m);
+_______________________________________________________________________________
+FIND NUMBER OF OCCURENCE
+int k=0;for(int i=0;i<=input2;i++){int j=i;while(j>0){if(j%10==input1)k++;j/=10;}}return k;
+_________________________________________________________________________
+REVERSE WORDS AND CASE
+ if(input2==0){string s="",s1="";foreach(char c in input1){if(c==' '){s=s+s1+' ';s1="";}else{s1=c+s1;}}
+s+=s1;return s;}else { string s="",s1="";foreach(char c in input1){if(c==' '){char[] i=s1.ToCharArray();
+Console.WriteLine(s.ToCharArray());if((int)i[0]>64&&(int)i[0]<=122)i[0]=char.ToUpper(i[0]);else{
+i[s1.Length-1]=char.ToUpper(i[s1.Length-1]);} s=s+new string(i)+' ';s1="";}else{s1=char.ToLower(c)+s1;}}
+char[] j=s1.ToCharArray();if((int)j[0]>64&&(int)j[0]<=122) j[0]=char.ToUpper(j[0]);else{j[s1.Length-1]=char.ToUpper(j[s1.Length-1]);}s=s+new string(j);return s;
+_____________________________________________________________________________________________________
+FIND STRING
+ string[] s=new string[10];int k=0;foreach(char c in input1){if(c==' '){k++;}else{s[k]+=c;}}
+string s1="";for(int i=0;i<=k;i++){foreach(char c in s[i]){if((int)c+s[i].Length>90&&char.IsUpper(c))
+s1+=(char)90;else if((int)c+s[i].Length>122&&char.IsLower(c))s1+=(char)122;else s1+=(char)((int)c+s[i].Length);}if(i!=k)s1+=' ';}return s1;
+______________________________________________________________________________________
+FIND MESSAGE
+ int k=0;string[] s=new string[100];foreach(char i in input1){if(i==' '){k++;}else{s[k]+=i;}}
+string m="";for(int i=0;i<=k;i++){m+=(char)num(s[i]);}return m;}public int num(string s){
+int sum =0,k=0,n=0;for (int i=s.Length-1;i>=0;i--){switch(s[i]){case 'I':k=1;break;case 'V':k=5;break;case 'X':k=10;break;case 'L':k=50;break;case 'C':k=100;break;default:
+ Console.WriteLine(sum);break;}if(i==s.Length-1){sum=sum+k;n=k;continue;}if(n>k){sum=sum-k;}else sum=sum+k;n=k;}return sum;
+______________________________________________________________________________________________________
+FIND MIN DIGIT
+int[] a=new int[12];int k=0;string s="";foreach(char i in input2){if(i==' '){a[k++]=int.Parse(s);s="";}
+else{s+=i;}}a[k++]=int.Parse(s);if(input1==0)return 0;int sum=0,j=0;while(sum<input1){if(a.Max()==0)return -1;sum=sum+a[maxi(a)];a[maxi(a)]=0;j++;}return j;}public int maxi(int[] a){int k=a[0],j=0;for(int i=1;i<12;i++){if(k<a[i]){k=a[i];j=i;}}return j;
+_________________________________________________________________________________________
+RCF
+int input1 = 13;// converting to string string str = input1.ToString();string num = string.Empty;
+int diff = 0;int x, y;while(num.Length != 1){num = null;for(int i = 0; i < str.Length - 1; i++){
+int.TryParse(str[i].ToString(), out x);int.TryParse(str[i+1].ToString(), out y);diff = x - y;if(diff < 0)diff *= -1; num += diff.ToString();}str = null;str = num; }Console.WriteLine(num);
+________________________________________________________________________________________
+SUMEETSUM lEAST THREE NUMBERS
+ int[] input1 = { 12345, 74831, 65412 };int sum = 0,k=0,p=0;int[] arr2 = new int[10];for (int i=0;i<input1.Length;i++)
+{int len = input1[i];int[] arr1 = new int[len];while(input1[i]>0){arr1[k++] = input1[i] % 10;input1[i] /= 10;}
+Array.Sort(arr1);string s = arr1[0].ToString()+ arr1[1].ToString()+ arr1[2].ToString();arr2[p++] = int.Parse(s);
+Console.WriteLine(arr2); Array.Clear(arr1, 0, arr1.Length); }for(int j=0;j<arr2.Length;j++){sum += arr2[j];}
+Console.WriteLine(sum);Console.ReadKey();
+_________________________________________________________________________________________________
+WEIGHT OF STRING IMPROVEMENT 1
+int sum = 0, k = 0, multi = 1;
+int[] arr = { 1, -2, 3, -4, -5, -6, -3, -1, 7, 8, 9, 12, 14, 15, 17, 21, 23, 27, 34, -36, -3, -2, -12, 16, 18, 20 };
+string str = "wipro test";str = str.ToUpper();string[] s = str.Split(' ');int[] arr2 = new int[s.Length];
+for (int i=0;i<s.Length;i++){char[] c = s[i].ToCharArray();for(int j=0;j<c.Length;j++){int n = (int)c[j] - 64;
+if (j == 0 || j == c.Length - 1){if (arr[n-1] < 0){sum += n;}else{sum += arr[n-1];}}else{sum += arr[n-1];}}arr2[k++] = sum;
+sum = 0; } for(int l=0;l<arr2.Length;l++){ multi = multi * arr2[l]; } Console.WriteLine(multi);Console.ReadKey();
+_______________________________________________________________________________
+FIND PASSWORD(2 INPUT IN C#)
+ string[] s=split(input1);string[] s1=split(input2);string res=s[2]+s1[1]+s[0];return res;}string[] split(string i){int q=i.Length/3;int r=i.Length%3;string[] arr=new string[3];arr[0]=i.Substring(q*0,q);arr[1]=i.Substring(q*1,q+r);arr[2]=i.Substring(2*q+r,q);return arr;
+________________________________________________________________________________________
+ PRIME EXCLUDING LARGEST
+ int[] input1 = new int[] { 4,8,6,12 };int num = 0;int input2 = input1.Length;int[] a = new int[input2];
+ int i = 0, j = 0, k = 0, count1 = 0, count = 0, sum = 0;for (i = 0; i < input2; i++){num = input1[i];
+for (j = 1; j <= num; j++){if (num % j == 0){count++;}}if (count == 2){a[k++] = input1[i];count1++;}count = 0;num = 0;
+}Array.Sort(input1);Array.Sort(a);if(count1==0){for (i = 0; i < input2 - 1; i++){sum = sum + input1[i];}}
+else {for (i = 0; i < a.Length - 1; i++){sum = sum + a[i];}}Console.WriteLine(sum);Console.ReadKey();
+_________________________________________________________________________________________________
+ENCODING THREE STRINGS
+ string s="";string s1="";string s2="";int i=0;foreach(char c in input1){if(input1.Length%3==0){if(i<input1.Length/3)s+=c;else if(i<2*(input1.Length)/3)s1+=c;else s2+=c;}else if((input1.Length-1)%3==0){
+if(i<(input1.Length-1)/3)s+=c;else if(i<(2*(input1.Length-1)/3)+1)s1+=c;else s2+=c;
+}else if((input1.Length+1)%3==0){if(i<(input1.Length+1)/3)s+=c;else if(i<(2*(input1.Length+1)/3)-1)
+s1+=c;else s2+=c;}i++;}i=0;foreach(char c in input2){if(input2.Length%3==0){if(i<input2.Length/3)s+=c;
+else if(i<2*(input2.Length)/3)s1+=c;else s2+=c;}else if((input2.Length-1)%3==0){if(i<(input2.Length-1)/3)
+s+=c;else if(i<(2*(input2.Length-1)/3)+1)s1+=c;else s2+=c;}else if((input2.Length+1)%3==0){if(i<(input2.Length+1)/3)
+s+=c;else if(i<(2*(input2.Length+1)/3)-1)s1+=c;else s2+=c;}i++;}i=0;foreach(char c in input3){if(input3.Length%3==0){
+if(i<input3.Length/3)s+=c;else if(i<2*(input3.Length)/3)s1+=c;else s2+=c;}else if((input3.Length-1)%3==0){
+if(i<(input3.Length-1)/3)s+=c;else if(i<(2*(input3.Length-1)/3)+1)s1+=c;else s2+=c;}
+else if((input3.Length+1)%3==0){if(i<(input3.Length+1)/3)s+=c;else if(i<(2*(input3.Length+1)/3)-1)
+s1+=c;else s2+=c;}i++;}string s3="";foreach(char c in s2){if((int)c<95)s3+=char.ToLower(c);else s3+=char.ToUpper(c);
+}Result r=new Result();r.output1=s;r.output2=s1;r.output3=s3;return r;
+_____________________________________________________________________________________________________
+FIND STRING CODE(WORLD WIDE WEB)
+input1=input1.ToUpper();string res= "";string[] str=input1.Split(' ');int a=0;for(int i=0;i<str.Length;i++)
+{a=0;if(str[i].Length%2==0){for(int j=0;j<str[i].Length/2;j++){a=a+Math.Abs((str[i][j]-64)-(str[i][str[i].Length-j-1]-64));}else
+{for(int j=0;j<=str[i].Length/2;j++){if((str[i].Length-1-j)==j){a=a+(str[i][j]-64);}else{
+a=a+Math.Abs((str[i][j]-64)-(str[i][str[i].Length-j-1]-64));}}}res=res+a.ToString();}int c=int.Parse(res);return c;
+________________________________________________________________________________________
+Alternate Add Sum
+int sum=input1;if(input2==1){for(int i=0;i<input1;i++){if(i%2==0){sum=sum-(input1-i-1);}else{sum=sum+(input1-i-1);
+}}}if(input2==2){for(int i=0;i<input1;i++){if(i%2!=0){sum=sum-(input1-i-1);}else{sum=sum+(input1-i-1);}}}return sum;
+_______________________________________________________________________________________________________________________
+SAME EVEN/ODD SEQUENCE SUM
+int[] input1 = { 2, 4,8,2, 3, 2, 4,2,4, 5, 9, 2, 4,6};int input2 = input1.Length;int sum = 0;int count = 0, max = 0, curr_ind = 0, max_ind = 0, count1 = 0, last_index = 0;
+for (int i = 0; i < input2; i++){if (input1[i] % 2 == 0){count++;} else{if (count > max) {max = count;} count = 0;}}if (count > max){max = count;}for (int i = 0; i < input1.Length; i++)
+{if (input1[i] % 2 == 0){count1++; if (count1 == 1) {curr_ind = i; }last_index = i;else{ if (count1 == max){for (int j = curr_ind; j <= last_index; j++)
+{sum += input1[j];}}count1 = 0;}}if (count1 == max){for (int j = curr_ind; j <= last_index; j++){sum += input1[j];
+}} Console.WriteLine(max);Console.WriteLine(sum);
+_______________________________________________________________________________________________________________
+WIPRO TEST
+int sum = 0, k = 0, multi = 1;int[] arr = { 1, -2, 3, -4, -5, -6, -3, -1, 7, 8, 9, 12, 14, 15, 17, 21, 23, 27, 34, -36, -3, -2, -12, 16, 18, 20 };
+string str = "wipro test";str = str.ToUpper();string[] s = str.Split(' ');int[] arr2 = new int[s.Length];for (int i=0;i<s.Length;i++)
+{char[] c = s[i].ToCharArray();for(int j=0;j<c.Length;j++) {int n = (int)c[j] - 64;// sum += arr[n];if (j == 0 || j == c.Length - 1){if (arr[n-1] < 0)
+{sum += n;}else{sum += arr[n-1];}}else{sum += arr[n-1];}}arr2[k++] = sum;sum = 0;}for(int l=0;l<arr2.Length;l++){ multi = multi * arr2[l];}Console.WriteLine(multi);
+ ______________________________________________________________________________________________________________
+ Dvvi_fibonacii
+int input1 = 1,input2 = 3,input3 = 7, input4 = 9,d = 0, sum = 0; int[] arr = new int[input4]; arr[0] = input1; arr[1] = input2; arr[2] = input3; d = input2 - input1;int e = input3 - input2;
+for(int i=3;i<arr.Length;i++){if (i % 2 == 0){sum = arr[i-1] + e;arr[i] = sum; } else{sum = arr[i-1] + d;arr[i] = sum;}} Console.WriteLine(arr[input4-1]); Console.ReadKey(); }
+______________________________________________________________________________________________________________
+IS PALINDROME POSSIBLE
+public int isPalinNumPossible(int input1){int o=0;int[] arr = new int[input1.ToString().Length];for(int i=0;i<arr.Length;i++){int s=input1%10;arr[i]=s;
+input1/=10;}int[] freq={0,0,0,0,0,0,0,0,0,0};for(int i=0;i<arr.Length;i++){freq[arr[i]]++;}for(int i=0;i<freq.Length;i++){if(freq[i]%2!=0)o++;}if(o<=1)return 2;else return 1;
+__________________________________________________________________________________________________________________*/
+HILL WEIGHT
+public int totalHillWeight(int input1,int input2,int input3)int sum=0;for(int i=0;i<input1;i++){for(int j=0;j<=i;j++){Fsum+=input2;}input2+=input3;}return sum;}
+_____________________________________________________________________________________________________
+FIND SEQUENCE
+ public string findSequence(int input1,string[] input2,int[] input3)int[]n=new int[input1];string s="";int[] arr=new int[3];for(int i=0;i<input1;i++)
+{n[i]=input3[i];}Array.Sort(n);for(int j=0;j<input1-2;j++){if(n[j]+1==n[j+1] && n[j+1]+1==n[j+2]){arr[0]=n[j];}}if(arr[0]!=0)
+{arr[1]=arr[0]+1;arr[2]=arr[1]+1;for(int k=0;k<input1;k++){if(arr[0]==input3[k]){s=s+input2[k]+":";}}for(int k=0;k<input1;k++)if(arr[1]==input3[k])
+{s=s+input2[k]+":";}}for(int k=0;k<input1;k++){if(arr[2]==input3[k]){s=s+input2[k];}}return s;}else{return "NONE";}
+_________________________________________________________________________________________________________________________ 
+SECOND LAST DIGIT
+input1=Math.Abs(input1);int m=0;int[] n=new int[input1.ToString().Length];int i=0;if(input1.ToString().Length==1){m=-1;}else {while(input1!=0){n[i]=input1%10;i++;input1/=10;}Array.Reverse(n);m=n[n.Length-2];}return m;}
+____________________________________________________________________________________________________________________________
+*/
+
